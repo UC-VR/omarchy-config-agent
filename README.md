@@ -4,7 +4,7 @@ Explore some usages of AI for OMARCHY
 
 ## `omarchy-config-agent`
 
-The `omarchy-config-agent` is an intelligent assistant that helps you configure your Omarchy system using simple, natural language commands. It understands your requests and safely applies the necessary changes to your system's configuration files. For claude code but should be working for other LLM cli's
+The `omarchy-config-agent` is an intelligent assistant that helps you configure your Omarchy system using simple, natural language commands. It understands your requests and safely applies the necessary changes to your system's configuration files. For gemini/claude code but should be working for other LLM cli's
 
 **How to Use:**     
     Simply start `omarchy-config-agent` 
@@ -18,7 +18,7 @@ The `omarchy-config-agent` is an intelligent assistant that helps you configure 
 
 ## `omarchy-ask`
 
-The `omarchy-ask` explores some different non interactive ux for asking. But questions can also just be asked to the omarchy-config-agent. Only claude code
+The `omarchy-ask` explores some different non interactive ux for asking. But questions can also just be asked to the omarchy-config-agent. Only gemini/claude code
 
 **How to Use:**
 
@@ -39,7 +39,7 @@ Possible UX approaches for an AI agent
 The agent provides visual feedback to ensure users never miss important interactions. Before asking clarifying questions or requesting confirmation, the system triggers a visual notification.
 
 **Implementation:**
-- Command: `omarchy-claude-signal start`
+- Command: `omarchy-agent-signal start`
 - Triggers: Before user input is required (questions, confirmations)
 - Purpose: Alerts users to pay attention to the terminal when agent interaction is needed
 
@@ -51,7 +51,7 @@ Users working in multiple windows or contexts receive a clear signal when the ag
 Visual feedback is integrated directly into the status bar by changing the color of the Omarchy icon based on the agent's state.
 
 **How it works:**
-1. Agent sends signal to update Waybar state (via `omarchy-claude-signal start`)
+1. Agent sends signal to update Waybar state (via `omarchy-agent-signal start`)
 2. Script sets a state file and sends signal 9 to Waybar
 3. Waybar's custom/omarchy module receives signal 9 and executes `omarchy-icon-status`
 4. Script checks various states and returns appropriate CSS class:
